@@ -31,3 +31,4 @@ tsconfig.tsbuildinfo
 .vscode/
 .idea/
 *.log
+.vercel

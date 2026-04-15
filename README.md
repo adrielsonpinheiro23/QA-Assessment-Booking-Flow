@@ -4,10 +4,17 @@ A realistic 4-step UK skip-hire booking flow built as the target-under-test for 
 The app is a single Next.js 14 (App Router) service that serves both the UI and the four API
 endpoints defined in the assessment contract — no external services, no hidden dependencies.
 
+> 🌐 **Live demo:** https://qa-assessment-booking-flow-5ubsj49qp.vercel.app/
+> &nbsp;&nbsp;(no login, no VPN, no expiry — just open it)
+>
+> Deterministic fixtures to try: `SW1A 1AA` (happy path, 12 addresses) ·
+> `EC1A 1BB` (empty state) · `M1 1AE` (loading spinner) · `BS1 4DJ` (error + retry).
+
 ## At a glance
 
 | Deliverable | Location |
 |---|---|
+| **Live demo** | https://qa-assessment-booking-flow-5ubsj49qp.vercel.app/ |
 | Source code | [`src/`](src/) |
 | Four API routes matching the spec | [`src/app/api/`](src/app/api/) |
 | Deterministic fixtures (SW1A 1AA, EC1A 1BB, M1 1AE, BS1 4DJ) | [`src/lib/fixtures.ts`](src/lib/fixtures.ts) |
