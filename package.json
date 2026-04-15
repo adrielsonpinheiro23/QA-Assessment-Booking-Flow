@@ -1,0 +1,44 @@
+{
+  "name": "qa-booking-flow",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "test:e2e": "playwright test --config=automation/playwright.config.ts --project=chromium-desktop automation/tests/general-waste.spec.ts automation/tests/heavy-plasterboard.spec.ts automation/tests/api-contract.spec.ts automation/tests/a11y.spec.ts",
+    "test:e2e:headed": "playwright test --config=automation/playwright.config.ts --project=chromium-desktop --headed automation/tests/general-waste.spec.ts automation/tests/heavy-plasterboard.spec.ts",
+    "test:e2e:cross-browser": "playwright test --config=automation/playwright.config.ts --project=firefox --project=webkit",
+    "test:a11y": "playwright test --config=automation/playwright.config.ts --project=chromium-desktop automation/tests/a11y.spec.ts",
+    "test:screenshots": "playwright test --config=automation/playwright.config.ts --project=chromium-desktop automation/tests/screenshots.spec.ts",
+    "test:video": "playwright test --config=automation/playwright.config.ts --project=chromium-desktop automation/tests/walkthrough.video.spec.ts",
+    "test:install": "playwright install --with-deps chromium",
+    "test:install:all": "playwright install --with-deps chromium firefox webkit",
+    "lighthouse": "mkdir -p ui/lighthouse && lighthouse http://localhost:3000 --preset=desktop --output=html --output=json --output-path=./ui/lighthouse/desktop --chrome-flags=\"--headless --no-sandbox\" --quiet && lighthouse http://localhost:3000 --form-factor=mobile --output=html --output=json --output-path=./ui/lighthouse/mobile --chrome-flags=\"--headless --no-sandbox\" --quiet",
+    "load:smoke": "k6 run load/smoke.js",
+    "load:test": "k6 run load/load-test.js",
+    "load:stress": "k6 run load/stress-test.js"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@playwright/test": "1.48.2",
+    "@types/node": "20.16.11",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.20",
+    "axe-core": "^4.11.3",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.35",
+    "postcss": "8.4.47",
+    "tailwindcss": "3.4.14",
+    "typescript": "5.6.3"
+  }
+}

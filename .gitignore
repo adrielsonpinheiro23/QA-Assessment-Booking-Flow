@@ -1,0 +1,33 @@
+# deps
+/node_modules
+/.pnp
+.pnp.js
+
+# next
+/.next/
+/out/
+/build
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# env
+.env*.local
+.env
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/automation/test-results/
+/automation/playwright-report/
+
+# k6
+/load/reports/
+
+# misc
+.DS_Store
+*.pem
+.vscode/
+.idea/
+*.log

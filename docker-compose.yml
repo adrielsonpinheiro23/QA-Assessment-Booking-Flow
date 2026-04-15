@@ -1,0 +1,10 @@
+services:
+  booking-flow:
+    build: .
+    image: qa-booking-flow:latest
+    container_name: qa-booking-flow
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.github
+automation/test-results
+automation/playwright-report
+test-results
+playwright-report
+ui
+*.md
+!README.md
+.env*.local
+.DS_Store
