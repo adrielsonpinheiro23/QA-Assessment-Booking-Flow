@@ -48,6 +48,9 @@ jobs:
         with:
           name: next-build
           path: .next
+          # .next starts with a dot; upload-artifact@v4 excludes hidden paths
+          # by default, which would silently upload nothing.
+          include-hidden-files: true
           retention-days: 1
 
   # E2E + contract + a11y suites. Runs against the production build for
